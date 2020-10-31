@@ -11,71 +11,87 @@ To use:
   7. Go to the website of your choice (or, if you have it open already, reload it) and check out the results.
 */
 
+/* complete dracula color pallet from here: https://github.com/dracula/dracula-theme#color-palette */
+:root {
+  --dracula-background: #282a36;
+  --dracula-current-line: #44475a;
+  --dracula-selection: #44475a;  /* same a current line */
+  --dracula-forground: #f8f8f2;
+  --dracula-comment: #6272a4;
+  --dracula-cyan: #8be9fd;
+  --dracula-green: #50fa7b;
+  --dracula-orange: #ffb86c;
+  --dracula-pink: #ff79c6;
+  --dracula-purple: #bd93f9;
+  --dracula-red: #ff5555;
+  --dracula-yellow: #f1fa8c;
+}
+
 /* Link hint boxes */
 div > .vimiumHintMarker {
-  background: #282a36;
+  background: var(--dracula-background);
   font-size: 12px;
-  border: 0.25em solid #ffb86c;
+  border: 0.25em solid var(--dracula-orange);
   border-radius: 0.34em;
   box-shadow: 0em 0.1em 0.6em 0.1em rgba(0, 0, 0, 0.4);
 }
 
 /* Link hint text */
 div > .vimiumHintMarker span {
-  color: #f8f8f2;
+  color: var(--dracula-forground);
   font-size: inherit;
   text-shadow: none;
 }
 
 /* Link hint matching characters */
 div > .vimiumHintMarker > .matchingCharacter {
-  color: #6272a4;
+  color: var(--dracula-comment);
 }
 
 /* HUD ("heads-up display") bar */
 div.vimiumHUD {
-  background: #282a36;
-  border: 1px solid #6272a4;
+  background: var(--dracula-background);
+  border: 1px solid var(--dracula-comment);
 }
 
 div.vimiumHUD .vimiumHUDSearchArea {
-  background: #282a36;
+  background: var(--dracula-background);
 }
 
 div.vimiumHUD .hud-find {
-  background: #282a36;
+  background: var(--dracula-background);
   border: none;
-  color: #f8f8f2;
+  color: var(--dracula-forground);
 }
 
 div.vimiumHUD span#hud-find-input{
-  color: #f8f8f2;  /* 'Foreground' color */
+  color: var(--dracula-forground);
 }
 
 div.vimiumHUD span#hud-match-count {
-  color: #6272a4;  /* 'Comment' color */
+  color: var(--dracula-comment);
 }
 
 div.vimiumHUD .vimiumHUDSearchAreaInner {
-  color: #6272a4;  /* 'Comment' color */
+  color: var(--dracula-comment);
 }
 
 #vomnibar{
-    background-color: #44475A;
+    background-color: var(--dracula-current-line);
 }
 
 #vomnibar input {
-  color: #f8f8f2;
+  color: var(--dracula-forground);
   font: -moz-window;
   /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
   font-size: 20px;
   height: 34px;
   margin-bottom: 0;
   padding: 4px;
-  background-color: #282a36;
+  background-color: var(--dracula-background);
   border-radius: 3px;
-  border: 1px solid #6272a4;
-  box-shadow: #bd93f9 0px 0px 1px;
+  border: 1px solid var(--dracula-comment);
+  box-shadow: var(--dracula-purple) 0px 0px 1px;
   width: 100%;
   outline: none;
   box-sizing: border-box;
@@ -84,13 +100,13 @@ div.vimiumHUD .vimiumHUDSearchAreaInner {
 #vomnibar .vomnibarSearchArea {
   display: block;
   padding: 10px;
-  background-color: #6272a4;
+  background-color: var(--dracula-comment);
   border-radius: 4px 4px 0 0;
-  border-bottom: 0px solid #bd93f9;
+  border-bottom: 0px solid var(--dracula-purple);
 }
 
 #vomnibar ul {
-  background-color: #44475a;
+  background-color: var(--dracula-current-line);
   border-radius: 0 0 4px 4px;
   list-style: none;
   padding-top: 0;
@@ -100,11 +116,11 @@ div.vimiumHUD .vimiumHUDSearchAreaInner {
 }
 
 #vomnibar li {
-  border-bottom: 1px solid #6272a4;
+  border-bottom: 1px solid var(--dracula-comment);
   line-height: 1.1em;
   padding: 7px 10px;
   font-size: 16px;
-  color: #f8f8f2;
+  color: var(--dracula-forground);
   position: relative;
   display: list-item;
   margin: auto;
@@ -117,7 +133,7 @@ div.vimiumHUD .vimiumHUDSearchAreaInner {
 }
 
 #vomnibar li .vomnibarSource {
-  color: #bd93f9;
+  color: var(--dracula-purple);
   margin-right: 4px;
 }
 #vomnibar li .vomnibarRelevancy {
@@ -125,8 +141,8 @@ div.vimiumHUD .vimiumHUDSearchAreaInner {
   right: 0;
   top: 0;
   padding: 5px;
-  background-color: #282a36;
-  color: #f8f8f2;
+  background-color: var(--dracula-background);
+  color: var(--dracula-forground);
   font-family: monospace;
   width: 100px;
   overflow: hidden;
@@ -134,29 +150,29 @@ div.vimiumHUD .vimiumHUDSearchAreaInner {
 
 #vomnibar li .vomnibarUrl {
   white-space: nowrap;
-  color: #50fa7b;
+  color: var(--dracula-green);
 }
 
 #vomnibar li .vomnibarMatch {
   font-weight: bold;
-  color: #ffb86c;
+  color: var(--dracula-orange);
 }
 
 #vomnibar li em, #vomnibar li .vomnibarTitle {
-  color: #f8f8f2;
+  color: var(--dracula-forground);
   margin-left: 4px;
   font-weight: normal;
 }
 #vomnibar li em { font-style: italic; }
 #vomnibar li em .vomnibarMatch, #vomnibar li .vomnibarTitle .vomnibarMatch {
-  color: #ffb86c;
+  color: var(--dracula-orange);
 }
 
 #vomnibar li.vomnibarSelected {
-  background-color: #6272a4;
+  background-color: var(--dracula-comment);
   font-weight: normal;
 }
 
 #vomnibarInput::selection {
-  background-color: #8be9fd;
+  background-color: var(--dracula-cyan);
 }
